@@ -9,11 +9,11 @@ export const skillGroups: SkillGroup[] = [
     },
     {
         name: "Data Science & NLP",
-        skills: ["Pytorch", "Tensorflow", "scikit-learn", "IndoBERT", "Model evaluation"],
+        skills: ["PyTorch", "TensorFlow", "scikit-learn", "IndoBERT", "Model evaluation"],
     },
     {
         name: "Data Engineering",
-        skills: ["dbt", "Apache Airflow", "Apache Kafka", "Docker", "Github Actions"],
+        skills: ["dbt", "Apache Airflow", "Apache Kafka", "Docker", "GitHub Actions"],
     },
     {
         name: "AI Engineering",

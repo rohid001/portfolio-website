@@ -1,5 +1,5 @@
 // Pemeriksa kualitas konten sebelum dipakai di halaman (Fase 3-4).
-// Mengecel kelengkapan data dan panjang teks supaya mudah dibaca HR.
+// Mengecelk kelengkapan data dan panjang teks supaya mudah dibaca HR.
 // Jalankan dengan: node scripts/check-content.ts
 import { profile } from "../src/content/profile.ts";
 import { skillGroups } from "../src/content/skills.ts";

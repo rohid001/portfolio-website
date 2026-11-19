@@ -17,7 +17,7 @@ export type SocialLink = {
 export type Education = {
     school: string;
     degree: string;
-    peroid: string; // contoh "Oct 2020 - Feb 2025"
+    period: string; // contoh "Oct 2020 - Feb 2025"
 };
 
 export type Experience= {
@@ -29,14 +29,14 @@ export type Experience= {
 
 export type Publication = {
     title: string;
-    vanue: string;
+    venue: string;
     year: number;
     url: string;
 };
 
 export type Profile = {
     name: string;
-    shortname: string;
+    shortName: string;
     roles: string[]; // jabatan yang dituju, tampil di Hero
     tagline: string; // satu kalimat pembuka untuk pembaca non-teknis
     location: string;
