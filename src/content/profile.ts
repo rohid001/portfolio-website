@@ -38,7 +38,7 @@ export const profile: Profile = {
     ],
     publications: [
         {
-            title: "Klasifikasi Hoax Berita Politik Menggunakan Algoritma LSTM dengan Penambahan Fitur Embedding Glove",
+            title: "Klasifikasi Hoax Berita Politik Menggunakan Algoritma LSTM dengan Penambahan Fitur Embedding GloVe",
             venue: "JEPIN Vol. 10 No. 2 (SINTA 2)",
             year: 2024,
             url: "https://doi.org/10.26418/jp.v10i2.76042",

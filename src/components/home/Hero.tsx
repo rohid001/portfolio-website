@@ -31,7 +31,7 @@ export function Hero() {
             </div>
 
             {/* Angka ringkas: label (dt) ditaruh di bawah angka (dd) lewat flex-col-reverse */}
-            <dl className="mt-14 grid max-w-xl grid-cols-3 gap-6 broder-t border-zinc-200 pt-8 dark:border-zinc-800">
+            <dl className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-zinc-200 pt-8 dark:border-zinc-800">
                 {stats.map((stat) => (
                     <div key={stat.label} className="flex flex-col-reverse gap-1">
                         <dt className="text-sm text-zinc-600 dark:text-zinc-400">{stat.label}</dt>
