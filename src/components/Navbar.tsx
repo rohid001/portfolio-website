@@ -12,7 +12,7 @@ const navLinks = [
 
 export function Navbar() {
     return(
-        <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 backdrop-blur dark: border-zinc-800 dark:bg-zinc-950/50">
+        <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
             <Container className="flex h-16 items-center justify-between">
                 <Link href="/" className="font-semibold tracking-tight">
                     {profile.shortName}
