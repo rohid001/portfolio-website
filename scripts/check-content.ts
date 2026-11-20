@@ -1,6 +1,7 @@
 // Pemeriksa kualitas konten sebelum dipakai di halaman (Fase 3-4).
 // Mengecelk kelengkapan data dan panjang teks supaya mudah dibaca HR.
 // Jalankan dengan: node scripts/check-content.ts
+import { existsSync } from "node:fs";
 import { profile } from "../src/content/profile.ts";
 import { skillGroups } from "../src/content/skills.ts";
 import { projects } from "../src/content/projects.ts";
@@ -65,6 +66,16 @@ for (const project of projects) {
     checkCount(project.highlights.length, 1, 3, `${where}.highlights`);
     if (project.stack.length === 0) errors.push(`${where}: stack is empty`);
     if (project.liveUrl) checkUrl(project.liveUrl, `${where}.liveurl`);
+    if (project.image) {
+        if (!existsSync(`public${project.image.src}`)) {
+            errors.push(`${where}.image: file not found (public${project.image.src})`);
+        }
+        if (countWords(project.image.alt) < 5) {
+            errors.push(`${where}.image: alt text needs at least 5 words`);
+        }
+    } else if (project.featured) {
+        warnings.push(`${where}: featured project has no image`);
+    }
 
     // Hasil tanpa angka masih boleh, tapi diberi peringatan
     const resultWithNumber = project.results.filter((r) => /\d/.test(r)).length;

@@ -30,6 +30,12 @@ export const projects: Project[] = [
         stack: ["Python", "PostgreSQL", "dbt", "Airflow", "Kafka", "Docker", "GitHub Actions", "Streamlit"],
         githubRepo: "olist-data-pipeline",
         liveUrl: "https://olist-data-pipeline.streamlit.app",
+        image: {
+          src: "/images/projects/olist-data-pipeline.png",
+          alt: "dbt lineage graph: raw order tables flow through staging and mart models into the Power BI and Streamlit dashboards.",
+          width: 1600,
+          height: 690,
+        },
     },
     {
         slug: "olist-sql-dashboard",
@@ -56,6 +62,12 @@ export const projects: Project[] = [
         ],
         stack: ["SQL (PostgreSQL)", "Python (pandas)", "Power BI"],
         githubRepo: "olist-sql-dashboard",
+        image: {
+          src: "/images/projects/olist-sql-dashboard.png",
+          alt: "Overview page of the Power BI dashboard: total revenue, orders, customers, and a monthly revenue line chart.",
+          width: 1182,
+          height: 678,
+        },
     },
     {
         slug: "court-decisions-rag",
@@ -83,7 +95,13 @@ export const projects: Project[] = [
         ],
         stack: ["Python", "Gemini API", "Chroma", "BM25", "SQLite", "Streamlit", "Docker"],
         githubRepo: "Dataset-Narkotika-RAG",
-        liveUrl: "https://rag-putusan-narkotika.streamlit.app/"
+        liveUrl: "https://rag-putusan-narkotika.streamlit.app/",
+        image: {
+          src: "/images/projects/court-decisions-rag.png",
+          alt: "Streamlit app answering a question about a court case, with sample questions in the sidebar.",
+          width: 1600,
+          height: 737,
+        },
     },
     {
     slug: "hoax-detection-revisited",
@@ -112,6 +130,12 @@ export const projects: Project[] = [
     ],
     stack: ["Python", "PyTorch", "FastText", "Jupyter"],
     githubRepo: "klasifikasi-hoax-lstm-revisited",
+    image: {
+      src: "/images/projects/hoax-detection-revisited.png",
+      alt: "Bar chart comparing the original and revisited models on accuracy, precision, recall, and F1-score.",
+      width: 960,
+      height: 600,
+    },
   },
   {
     slug: "hoax-detection-paper",

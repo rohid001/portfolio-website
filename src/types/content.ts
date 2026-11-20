@@ -60,6 +60,14 @@ export type ProjectHighlight = {
     label: string;
 };
 
+// Screeshot project di folder public/images/projects/
+export type ProjectImage = {
+    src: string; // contoh: "/images/projects/olist-sql-dashboard.png"
+    alt: string; // deskripsi gambar untuk pembaca layar
+    width: number; // ukuran asli dalam piksel
+    height: number;
+}
+
 export type Project = {
     slug: string; // bagian URL: /projects/[slug]
     title: string;
@@ -74,4 +82,5 @@ export type Project = {
     stack: string[];
     githubRepo: string | null; // nama repo di Github; null bila repo private
     liveUrl?: string; // demo atau dashboard publik (opsional)
+    image?: ProjectImage; // screenshot (opsional)
 };
