@@ -1,11 +1,12 @@
-// Halaman utama sementara (placeholder) untuk mengecek Fase 0.
-// Isi lengkap Hero, About, dan Skills dibuat di Fase 3; kartu project di Fase 4.
+// Halaman Home: Hero, Featured projects, About, Skills, Contact.
+// Bagian Contact disempunakan di Fase 6
 import { ButtonLink } from "@/components/ButtonLink";
 import { Section } from "@/components/Section";
 import { Skills } from "@/components/home/Skills";
 import { Hero } from "@/components/home/Hero";
 import { About } from "@/components/home/About";
 import { profile } from "@/content/profile";
+import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 
 
 export default function HomePage() {
@@ -13,9 +14,7 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <Section id="projects" eyebrow="Work" title="Featured projects">
-        <p className="text-zinc-600 dark:text-zinc-400">Project cards are coming soon.</p>
-      </Section>
+      <FeaturedProjects />
 
       <About />
       <Skills />
