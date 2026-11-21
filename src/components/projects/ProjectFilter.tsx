@@ -12,7 +12,7 @@ export function ProjectFilter({ projects }: { projects: Project[] }) {
     const [activeFilter, setActiveFilter] = useState<CategoryFilter>("All");
 
     const filters: CategoryFilter[] = ["All", ...getCategories(projects)];
-    const visibileProjects = filterProjects(projects, activeFilter);
+    const visibleProjects = filterProjects(projects, activeFilter);
 
     return (
         <div>
@@ -35,11 +35,11 @@ export function ProjectFilter({ projects }: { projects: Project[] }) {
 
             {/* aria-live: pembaca layar mengumumkan jumlah setiap kali filter berubah */}
             <p aria-live="polite" className="mt-6 text-sm text-zinc-600 dark:text-zinc-400">
-                Showing {visibileProjects.length} of {projects.length} projects
+                Showing {visibleProjects.length} of {projects.length} projects
             </p>
 
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
-                {visibileProjects.map((project) => (
+                {visibleProjects.map((project) => (
                     <ProjectCard key={project.slug} project={project} />
                 ))}
             </div>

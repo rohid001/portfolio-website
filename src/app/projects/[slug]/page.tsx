@@ -1,5 +1,5 @@
 // Halaman case study: /projects/[slug], satu halaman untuk setiap project.
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -78,7 +78,7 @@ async function CaseStudy({ params }: { params: CaseStudyParams }) {
                 href="/projects"
                 className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
             >
-                ← All Projects
+                ← All projects
             </Link>
 
             <p className="mt-8 text-sm font-medium uppercase tracking-widest text-sky-700 dark:text-sky-400">
@@ -108,7 +108,7 @@ async function CaseStudy({ params }: { params: CaseStudyParams }) {
                     alt={project.image.alt}
                     width={project.image.width}
                     height={project.image.height}
-                    sizes="(min-width: 1024px) 976px, 100w"
+                    sizes="(min-width: 1024px) 976px, 100vw"
                     className="mt-10 w-full rounded-xl border border-zinc-200 dark:border-zinc-800"
                     preload
                 />
@@ -155,7 +155,7 @@ async function CaseStudy({ params }: { params: CaseStudyParams }) {
                 )}
                 {repoUrl && (
                     <ButtonLink href={repoUrl} variant={project.liveUrl ? "secondary" : "primary"} external>
-                        View code on Github
+                        View code on GitHub
                     </ButtonLink>
                 )}
                 {!repoUrl && (
