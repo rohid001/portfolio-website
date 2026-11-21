@@ -44,7 +44,7 @@ export const profile: Profile = {
             url: "https://doi.org/10.26418/jp.v10i2.76042",
         },
     ],
-    availability: "I'm open to Data Analyst, Data Scientist, and Data Engineer roles. Based in Malang, open to relocation or remote work",
+    availability: "I'm open to Data Analyst, Data Scientist, and Data Engineer roles. Based in Malang, open to relocation or remote work.",
     cv: {
         url: "/cv/rohid-aji-sunan-cv.pdf",
         update: "Nov 2026"
