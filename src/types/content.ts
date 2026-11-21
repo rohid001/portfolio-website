@@ -34,6 +34,12 @@ export type Publication = {
     url: string;
 };
 
+// File CV di folder public/cv (Fase 6)
+export type CvFile = {
+    url: string;        // contoh: "/cv/rohid-aji-sunan-cv.pdf"
+    update: string;     // contoh: "Nov 2026", tampil di samping tombol unduh
+};
+
 export type Profile = {
     name: string;
     shortName: string;
@@ -47,6 +53,8 @@ export type Profile = {
     education: Education[];
     experience: Experience[];
     publications: Publication[];
+    availability: string; // satu kalimat di bagian Contact: peran yang dicari
+    cv: CvFile;
 };
 
 export type SkillGroup = {
