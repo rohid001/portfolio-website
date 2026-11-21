@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { getRepoStats } from "@/lib/github";
 
 // Tanggal ISO menjadi teks mudah dibaca, contoh: "Nov 18, 2026"
-const dataFormatter = new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeZone: "UTC" });
+const dateFormatter = new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeZone: "UTC" });
 
 // Satu kotak, label di atas, nilai di bawah, supaya label antarkotak sejajar
 function StatItem({ label, children }: { label: string; children: ReactNode }) {
@@ -43,7 +43,7 @@ export async function GitHubStats({ repo }: { repo: string }) {
                     </StatItem>
                 )}
                 <StatItem label="Last code update">
-                    <time dateTime={stats.pushedAt}>{dataFormatter.format(new Date(stats.pushedAt))}</time>
+                    <time dateTime={stats.pushedAt}>{dateFormatter.format(new Date(stats.pushedAt))}</time>
                 </StatItem>
                 {/* Bintang hanya ditampilkan bila ada, supaya tidak muncul "0 stars" */}
                 {stats.stars > 0 && <StatItem label="GitHub stars">{stats.stars}</StatItem>}

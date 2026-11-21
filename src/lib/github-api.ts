@@ -37,7 +37,7 @@ type RepoResponse = {
 };
 
 // Contoh: { "Python": 52340, "Jupyter Notebook": 10211 } (angka dalam byte)
-type LanguageResponse = Record<string, number>;
+type LanguagesResponse = Record<string, number>;
 
 // Header standar GitHub: Authorization hanya dikirim bila token tersedia
 function buildHeaders(token?: string): Record<string, string> {
@@ -68,7 +68,7 @@ async function readErrorMessage(response: Response): Promise<string> {
 }
 
 // Mengubah ukuran byte per bahasa menjadi persentase, diurutkan dari yang terbesar
-export function toLanguageShares(bytes: LanguageResponse, max = MAX_LANGUAGES):
+export function toLanguageShares(bytes: LanguagesResponse, max = MAX_LANGUAGES):
 LanguageShare[] {
     const total = Object.values(bytes).reduce((sum, size) => sum + size, 0);
     if (total === 0) return [];
@@ -87,19 +87,19 @@ Promise<RepoResult> {
 
     try {
         // Dua request dijalankan bersamaan supaya lebih cepat
-        const [repoResponse, languageResponse] = await Promise.all([
+        const [repoResponse, languagesResponse] = await Promise.all([
             githubGet(path, token),
             githubGet(`${path}/languages`, token),
         ]);
 
-        for (const response of  [repoResponse, languageResponse]) {
+        for (const response of  [repoResponse, languagesResponse]) {
             if (!response.ok) {
                 return { ok: false, status: response.status, message: await readErrorMessage(response) };
             }
         }
 
         const repoData = (await repoResponse.json()) as RepoResponse;
-        const languages = (await languageResponse.json()) as LanguageResponse;
+        const languages = (await languagesResponse.json()) as LanguagesResponse;
 
         return {
             ok: true,

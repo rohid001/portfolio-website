@@ -15,7 +15,7 @@ export async function getRepoStats(repo: string): Promise<RepoStats | null> {
 
     if (!result.ok) {
         console.warn(`[github] ${repo}: ${result.status} ${result.message}`);
-        cacheLife("minutes")
+        cacheLife("minutes");
         return null;
     }
 
