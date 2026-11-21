@@ -25,6 +25,7 @@ export function Hero() {
 
             <div className="mt-8 flex flex-wrap gap-3">
                 <ButtonLink href="/projects">View projects</ButtonLink>
+                <ButtonLink href={profile.cv.url} variant="secondary" external>Download CV</ButtonLink>
                 <ButtonLink href="/#contact" variant="secondary">
                     Contact me
                 </ButtonLink>
