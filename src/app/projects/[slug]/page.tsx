@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
+import { GitHubStats, GitHubStatsSkeleton } from "@/components/projects/GitHubStats";
 import { Tag } from "@/components/Tag";
 import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
@@ -144,6 +145,13 @@ async function CaseStudy({ params }: { params: CaseStudyParams }) {
                         ))}
                     </ul>
                 </CaseSection>
+
+                {/* Data live dari GitHub; Suspense menampilkan kerangka selama data dimuat */}
+                {project.githubRepo && (
+                    <Suspense fallback={<GitHubStatsSkeleton />}>
+                        <GitHubStats repo={project.githubRepo} />
+                    </Suspense>
+                )}
             </div>
 
             {/* Tombol ke demo dan kode; project private hanya menampilkan keterangan */}
