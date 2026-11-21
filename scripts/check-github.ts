@@ -1,7 +1,6 @@
 // pemeriksa koneksi ke GitHub API untuk setiap project yang punya repo Publik (Fase 5).
 // Token dibaca dari .env.local lewat flag --env-file-if-exists di package.json.
 // Jalankan dengan: npm run check:github
-import { fail } from "assert";
 import { profile } from "../src/content/profile.ts";
 import { projects } from "../src/content/projects.ts";
 import { fetchRateLimit, fetchRepoStats } from "../src/lib/github-api.ts";
