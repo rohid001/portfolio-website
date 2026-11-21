@@ -39,7 +39,7 @@ type RepoResponse = {
 // Contoh: { "Python": 52340, "Jupyter Notebook": 10211 } (angka dalam byte)
 type LanguageResponse = Record<string, number>;
 
-// Header standar Github: Authorization hanya dikirim bila token tersedia
+// Header standar GitHub: Authorization hanya dikirim bila token tersedia
 function buildHeaders(token?: string): Record<string, string> {
     const headers: Record<string, string> = {
         Accept: "application/vnd.github+json",

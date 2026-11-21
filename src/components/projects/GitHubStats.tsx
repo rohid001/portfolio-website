@@ -24,7 +24,7 @@ export async function GitHubStats({ repo }: { repo: string }) {
     return (
         <section aria-labelledby="github">
             <h2 id="github" className="text-2xl font-bold tracking-tight">
-                On Github
+                On GitHub
             </h2>
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                 Pulled automatically from the public repository and refreshed every hour.
@@ -46,7 +46,7 @@ export async function GitHubStats({ repo }: { repo: string }) {
                     <time dateTime={stats.pushedAt}>{dataFormatter.format(new Date(stats.pushedAt))}</time>
                 </StatItem>
                 {/* Bintang hanya ditampilkan bila ada, supaya tidak muncul "0 stars" */}
-                {stats.stars > 0 && <StatItem label="Github stars">{stats.stars}</StatItem>}
+                {stats.stars > 0 && <StatItem label="GitHub stars">{stats.stars}</StatItem>}
             </dl>
         </section>
     );
