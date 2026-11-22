@@ -11,6 +11,7 @@ import { Tag } from "@/components/Tag";
 import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { getProjectBySlug } from "@/lib/projects";
+import { createMetadata } from "@/lib/seo";
 
 // Semua slug dibuat menjadi halaman statis saat build
 export function generateStaticParams() {
@@ -24,7 +25,11 @@ export async function generateMetadata({
     const { slug } = await params;
     const project = getProjectBySlug(projects, slug);
     if (!project) return {};
-    return { title: project.title, description: project.summary };
+    return createMetadata({
+        title: project.title,
+        description: project.summary,
+        path: `/projects/${project.slug}`,
+    });
 }
 
 // Judul kecil untuk setiap bagian case study

@@ -1,16 +1,17 @@
 // Halaman /projects: semua project dalam bentuk kartu, dengan filter kategori
-import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { ProjectFilter } from "@/components/projects/ProjectFilter";
 import { projects } from "@/content/projects";
+import { createMetadata } from "@/lib/seo";
 
 // Judul tab menjadi "projects | Rohid Aji Sunan" lewat template di layout
-export const metadata: Metadata = {
+export const metadata = createMetadata ({
     title: "Projects",
-    description: "Data Analysis, data science, data engineering, and AI projects by Rohid.",
-};
+    description: "Data Analysis, data science, data engineering, and AI projects by Rohid, each with a short case study.",
+    path: "/projects",
+});
 
-export default function ProjectPage() {
+export default function ProjecstPage() {
     return (
         <Container className="py-16 sm:py-24">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Projects</h1>

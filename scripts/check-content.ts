@@ -5,11 +5,14 @@ import { existsSync } from "node:fs";
 import { profile } from "../src/content/profile.ts";
 import { skillGroups } from "../src/content/skills.ts";
 import { projects } from "../src/content/projects.ts";
+import { site } from "../src/content/site.ts";
 import type { ProjectCategory } from "../src/types/content.ts";
 
 // Batas jumlah kata supaya teks bisa dibaca sekilas
 const MAX_SUMMARY_WORDS = 25;
 const MAX_PROBLEM_WORDS = 40;
+//Batas karakter deskripsi SEO supaya tidak terpotong di hasil pencarian
+const MAX_DESCRIPTION_CHARS = 160;
 // Slug hanya huruf kecil, angka, dan tanda hubung, contoh: "olist-sql-dashboard"
 const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
@@ -41,6 +44,20 @@ if (!profile.email.includes("@")) errors.push("profile.email: not a valid email"
 profile.socials.forEach((link) => checkUrl(link.url, `profile.socials.${link.label}`));
 profile.publications.forEach((pub) => checkUrl(pub.url, "profile.publications"));
 skillGroups.forEach((group) => checkCount(group.skills.length, 3, 6, `skills.${group.name}`),);
+// --- Tahao 1b: CV dan pengaturan SEO (Fase 6) ---
+if (!profile.cv.url.endsWith(".pdf")) errors.push("profile.cv: file must be a pdf");
+if (!existsSync(`public${profile.cv.url}`)) {
+    errors.push(`profile.cv: file not found (public${profile.cv.url})`);
+}
+if (countWords(profile.availability) > MAX_SUMMARY_WORDS) {
+    errors.push(`profile.availability: more than ${MAX_SUMMARY_WORDS} words`);
+}
+checkUrl(site.url, "site.url");
+if (site.url.endsWith("/")) errors.push("site.url: remove the trailing slash");
+// Deskripsi yang terlalu panjang biasanya terpotong di hasil pencarian Google
+if (site.description.length > MAX_DESCRIPTION_CHARS) {
+    warnings.push(`site.description: ${site.description.length} characters (aim for) ${MAX_DESCRIPTION_CHARS} or fewer`);
+}
 
 // --- Tahap 2: tiap project ---
 const seenSlugs = new Set<string>();

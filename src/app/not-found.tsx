@@ -1,6 +1,10 @@
 // Halaman 404: tampil bila alamat yang dibuka tidak ada.
+import { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
+
+// Judul tab yang jelas; Next.js otomatis menambahkan noindex di halaman 404
+export const metadata: Metadata = { title: "Page not found" };
 
 export default function NotFound() {
     return (
@@ -12,7 +16,12 @@ export default function NotFound() {
             <p className="text-zinc-600 dark:text-zinc-400">
                 The page you are looking for does not exist or has moved.
             </p>
-            <ButtonLink href="/">Back to home</ButtonLink>
+            <div className="flex flex-wrap gap-3">
+                <ButtonLink href="/">Back to home</ButtonLink>
+                <ButtonLink href="/projects" variant="secondary">
+                    See all projects
+                </ButtonLink> 
+            </div>
         </Container>
     );
 }

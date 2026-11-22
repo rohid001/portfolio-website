@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { profile } from "@/content/profile";
+import { site } from "@/content/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,13 +16,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Metadata default; halaman lain cukup mengisi title, lalu template menambah nama
+// Metadata dasar semua halaman. Tiap halaman menambah judul, canonical, dan Open Graph lewat createMetadata.
 export const metadata: Metadata = {
+  // Alamat utama website: dasar untuk semua URL relatif (canonical, og:url, og:image)
+  metadataBase: new URL(site.url),
   title: {
-    default: `${profile.name} | Data Portfolio`,
+    default: site.title,
     template: `%s | ${profile.name}`,
   },
-  description: "Portfolio of Rohid: data pipelines, dashboards, and AI projects explained in plain English.",
+  description: site.description,
+  // Kartu besar bergambar saat link dibagikan di X/Twitter
+  twitter: { card: "summary_large_image" },
+  // Tag verifikasi Google Search Console, hanya dipasang bila kodenya sudah diisi
+  verification: site.googleSiteVerification ? { google: site.googleSiteVerification }: undefined,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
