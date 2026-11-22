@@ -18,7 +18,7 @@ export function Contact() {
             <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a 
                     href={`mailto:${profile.email}`}
-                    className="font-mono text-lg underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-900 dark:decoration-zinc-700 dark:decoration-zinc-100"
+                    className="font-mono text-lg underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-900 dark:decoration-zinc-700 dark:hover:decoration-zinc-100"
                 >
                     {profile.email}
                 </a>
