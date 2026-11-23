@@ -30,3 +30,20 @@
 | Lighthouse (P / A / BP / SEO)       | n/a             | 100 / 100 / 100 / 100    |
 
 Home page (same day, same method): 99 / 100 / 100 / 100.
+
+## Fase 6 Contact, CV & SEO
+
+- Date: 2026-11-23
+- Site: https://portfolio-website-nu-eight-10.vercel.app
+
+| Metric                                    | Before (Fase 5)                                        | After (Fase 6)                                   |
+| ----------------------------------------- | ------------------------------------------------------ | ------------------------------------------------ |
+| Pages with a canonical URL                | 0 of 8                                                 | 8 of 8                                           |
+| Pages with og:title/description/url/image | 0 of 8                                                 | 8 of 8                                           |
+| Open Graph preview images                 | 0                                                      | 7                                                |
+| sitemap.xml / robots.txt                  | 404 / 404                                              | 200 (8 URLs) / 200                               |
+| Structured data (schema.org)              | none                                                   | Person, 0 errors, 0 warnings                     |
+| Clicks from Home to CV                    | no CV                                                  | 1                                                |
+| LinkedIn preview (Post Inspector)         | title "Hi, I'm Rohid." from the H1, no image, 3 warnings | image + title + description, canonical detected, 0 warnings |
+| Lighthouse SEO (mobile, median of 3)      | 100                                                    | 100                                              |
+| Pages indexed by Google                   | pending                                                | pending (check Search Console in a week)         |
