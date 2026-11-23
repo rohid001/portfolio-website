@@ -8,5 +8,5 @@ export const site = {
     description: " Data analyst, data scientist, and data engineer in Malang, Indonesia. Case studies of data pipelines, dashboard, and AI projects, explained in plain English.",
     locale: "en_US",
     // Kode verifikasi Google Search Console (Langkah 8); kosongkan bila belum ada
-    googleSiteVerification: "",
+    googleSiteVerification: "-LolHDLMNgmwXe9byfknayGisDjGSJ5xVS1AGDi87dQ",
 };
