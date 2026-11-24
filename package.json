@@ -13,7 +13,10 @@
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "check:content": "node scripts/check-content.ts",
-    "check:github": "node --env-file-if-exists=.env.local scripts/check-github.ts"
+    "check:github": "node --env-file-if-exists=.env.local scripts/check-github.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "next": "16.4.6",
@@ -21,13 +24,16 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1",
     "@tailwindcss/turbopack": "4.3.3",
-    "@types/node": "^20",
+    "@types/node": "^26.6.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
     "tailwindcss": "4.3.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^5.1.1"
   }
 }
