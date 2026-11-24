@@ -56,7 +56,7 @@ checkUrl(site.url, "site.url");
 if (site.url.endsWith("/")) errors.push("site.url: remove the trailing slash");
 // Deskripsi yang terlalu panjang biasanya terpotong di hasil pencarian Google
 if (site.description.length > MAX_DESCRIPTION_CHARS) {
-    warnings.push(`site.description: ${site.description.length} characters (aim for) ${MAX_DESCRIPTION_CHARS} or fewer`);
+    warnings.push(`site.description: ${site.description.length} characters (aim for ${MAX_DESCRIPTION_CHARS} or fewer)`);
 }
 
 // --- Tahap 2: tiap project ---

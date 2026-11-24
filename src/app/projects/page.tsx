@@ -7,11 +7,11 @@ import { createMetadata } from "@/lib/seo";
 // Judul tab menjadi "projects | Rohid Aji Sunan" lewat template di layout
 export const metadata = createMetadata ({
     title: "Projects",
-    description: "Data Analysis, data science, data engineering, and AI projects by Rohid, each with a short case study.",
+    description: "Data analysis, data science, data engineering, and AI projects by Rohid, each with a short case study.",
     path: "/projects",
 });
 
-export default function ProjecstPage() {
+export default function ProjectsPage() {
     return (
         <Container className="py-16 sm:py-24">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Projects</h1>
