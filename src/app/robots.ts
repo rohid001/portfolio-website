@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
     return {
         // Semua crawler boleh membaca semua halaman
         rules: { userAgent: "*", allow: "/" },
-        sitemap: `${site.url}/sitemap/xml`,
+        sitemap: `${site.url}/sitemap.xml`,
     };
 }
