@@ -1,0 +1,59 @@
+# CI: setiap push ke main dan setiap pull request diperiksa otomatis (Fase 7).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Workflow ini hanya perlu membaca isi repo
+permissions:
+  contests: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      # Versi Node dibaca dari "engines" di package.json (26.x)
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: package.json
+          cache: npm
+      
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Content check
+        run: npm run check:content
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+        env:
+          # Token bawaan GitHub Actions (bukan token pribadi) untuk data GitHub saat build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: End-to-end tests
+        run: npm run test:e2e
+
+      # Bila e2e gagal, laporan HTML Playwright bisa diunduh dari halaman run
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
