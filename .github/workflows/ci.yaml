@@ -8,7 +8,7 @@ on:
 
 # Workflow ini hanya perlu membaca isi repo
 permissions:
-  contests: read
+  contents: read
 
 jobs:
   quality:
