@@ -46,4 +46,4 @@ Home page (same day, same method): 99 / 100 / 100 / 100.
 | Clicks from Home to CV                    | no CV                                                  | 1                                                |
 | LinkedIn preview (Post Inspector)         | title "Hi, I'm Rohid." from the H1, no image, 3 warnings | image + title + description, canonical detected, 0 warnings |
 | Lighthouse SEO (mobile, median of 3)      | 100                                                    | 100                                              |
-| Pages indexed by Google                   | pending                                                | pending (check Search Console in a week)         |
+| Pages indexed by Google                   | pending                                                | 3 of 4 known (sitemap: 8), 1 crawled but not indexed (as of 2026-11-23)         |
